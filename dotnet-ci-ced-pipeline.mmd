@@ -1,0 +1,31 @@
+graph TD
+    subgraph Build Pipeline
+        A[OAS Validation] --> B{OAS Valid?}
+        B -- Yes --> C[OAS Linting]
+        B -- No --> K[Fail Build]
+        C --> D{Linting OK?}
+        D -- Yes --> E[Code Generation - Optional]
+        D -- No --> K
+        E --> F[Client SDK Generation]
+        F --> G[Build .NET Application]
+        G --> H[Run Unit and Integration Tests]
+        H --> I{Tests OK?}
+        I -- Yes --> J[Container Image Generation]
+        I -- No --> K
+        J --> L[Generate Helm Chart Configs]
+        L --> M[Artifact Publication]
+    end
+    
+    subgraph Release Pipeline
+        M --> N[Trigger Release]
+        N --> O[Deployment to Kubernetes]
+        O --> P[Verify Deployment Health]
+        P --> Q{Health OK?}
+        Q -- Yes --> R[Post-Deployment Contract Verification]
+        Q -- No --> S[Rollback Manual or Automated]
+        R --> T{Contract OK?}
+        T -- Yes --> U[Azure API Management Update]
+        T -- No --> S
+        U --> V[Apply API Policies - Optional]
+        V --> W[Release Successful]
+    end
