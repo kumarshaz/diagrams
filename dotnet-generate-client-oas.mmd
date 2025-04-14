@@ -1,0 +1,43 @@
+block-beta
+  columns 1
+
+  id1[["Prerequisite"]]
+  style id1 fill:#d6e0f5,stroke:#333,stroke-width:2px
+
+  block:ID
+    A ["OAS File"]
+    style A fill:#e0f7d9,stroke:#333,stroke-width:1px
+    B ["npm"]
+    style B fill:#e0f7d9,stroke:#333,stroke-width:1px
+    C ["JDK"]
+    style C fill:#e0f7d9,stroke:#333,stroke-width:1px
+  end
+
+  blockArrowId4<[" "]>(down)
+
+  id2[["Client Development"]]
+  style id2 fill:#e0f7d9,stroke:#333,stroke-width:2px
+
+  D ["Install openapi-generator-cli (if not already)"]
+  style D fill:#fff0f5,stroke:#333,stroke-width:1px
+  space
+  E ["Create Generator Configuration File (e.g., config.yaml or config.json)"]
+  style E fill:#fff0f5,stroke:#333,stroke-width:1px
+  space
+  F ["Specify Input OAS File, Output Path, Target Language (csharp), Namespace, etc."]
+  style F fill:#fff0f5,stroke:#333,stroke-width:1px
+  space
+  G ["Execute Client Generation Command using openapi-generator-cli"]
+  style G fill:#fff0f5,stroke:#333,stroke-width:1px
+  space
+  H ["Add Generated Code to Client Project"]
+  style H fill:#fff0f5,stroke:#333,stroke-width:1px
+  space
+  I ["(Optional) Customize Generated Client"]
+  style I fill:#fff0f5,stroke:#333,stroke-width:1px
+
+  D --> E
+  E --> F
+  F --> G
+  G --> H
+  H --> I
