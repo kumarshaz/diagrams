@@ -1,47 +1,43 @@
 block-beta
   columns 1
-
+  
   id1[["Prerequisite"]]
   style id1 fill:#d6e0f5,stroke:#333,stroke-width:2px
-
+  
   block:ID
     A ["OAS File"]
     style A fill:#e0f7d9,stroke:#333,stroke-width:1px
-    B ["dotnet CLI"]
+    B ["npm"]
     style B fill:#e0f7d9,stroke:#333,stroke-width:1px
     C ["JDK"]
-    style B fill:#e0f7d9,stroke:#333,stroke-width:1px
+    style C fill:#e0f7d9,stroke:#333,stroke-width:1px
   end
-
+  
   blockArrowId4<[" "]>(down)
-
-  id2[["Client Development"]]
-  style id2 fill:#e0f7d9,stroke:#333,stroke-width:2px
-
-  D ["Choose Client Generation Tool (e.g., NSwag, AutoRest)"]
+  
+  id2[["Server Development"]]
+  style id2 fill:#f5e0e0,stroke:#333,stroke-width:2px
+  
+  D ["Install openapi-generator-cli"]
   style D fill:#fff0f5,stroke:#333,stroke-width:1px
   space
-  E ["Install Tool (CLI or NuGet Package)"]
+  E ["Validate OAS"]
   style E fill:#fff0f5,stroke:#333,stroke-width:1px
   space
-  F ["Create Configuration File (e.g., nswag.json) or Use CLI Arguments"]
+  F ["Create generator input"]
   style F fill:#fff0f5,stroke:#333,stroke-width:1px
   space
-  G ["Specify Input OAS File, Output Path, Language (C#), etc."]
+  G ["Generate Solution scaffolding"]
   style G fill:#fff0f5,stroke:#333,stroke-width:1px
   space
-  H ["Execute Client Generation Command"]
+  H ["Update Program"]
   style H fill:#fff0f5,stroke:#333,stroke-width:1px
   space
-  I ["Add Generated Code to Client Project"]
+  I ["Serve Generated and Static OAS"]
   style I fill:#fff0f5,stroke:#333,stroke-width:1px
-  space
-  J ["(Optional) Customize Generated Client"]
-  style J fill:#fff0f5,stroke:#333,stroke-width:1px
-
+  
   D --> E
   E --> F
   F --> G
   G --> H
   H --> I
-  I --> J
