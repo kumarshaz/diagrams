@@ -1,0 +1,61 @@
+
+
+%% Client and server testing:
+block-beta
+  columns 2
+  block id2[["Server Testing"]]:1
+  columns 1
+  space
+  style id2 fill:#f5e0e0,stroke:#333,stroke-width:2px
+  H ["Plan Tests based on Initial OAS"]
+  style H fill:#fff0f5,stroke:#333,stroke-width:1px
+  space
+  I ["Unit Tests: Validate Responses against OAS Schema using NJsonSchema.Validation & FluentAssertions"]
+  style I fill:#fff0f5,stroke:#333,stroke-width:1px
+  space
+  J ["Integration Tests: Use WireMock.Net/In-Memory Server to Isolate and Test API"]
+  style J fill:#fff0f5,stroke:#333,stroke-width:1px
+  space
+  K ["Verify Code Generated OAS against Static OAS (Optional but Recommended)"]
+  style K fill:#fff0f5,stroke:#333,stroke-width:1px
+  H --> I
+  I --> J
+  J --> K
+  end
+
+  block id3[["Client Testing"]]:1
+  columns 1
+  space
+  style id3 fill:#e0f7d9,stroke:#333,stroke-width:2px
+  E1 ["Instantiate Generated Client"]
+  style E1 fill:#e0f7d9,stroke:#333,stroke-width:1px
+  space
+  F1 ["(Optional) Mock HttpClient/Dependencies"]
+  style F1 fill:#e0f7d9,stroke:#333,stroke-width:1px
+  space
+  G1 ["Configure Mock Responses (if mocking)"]
+  style G1 fill:#e0f7d9,stroke:#333,stroke-width:1px
+  space
+  H1 ["Call Client Methods"]
+  style H1 fill:#e0f7d9,stroke:#333,stroke-width:1px
+  space
+  I1 ["Assert on Successful Response (Data, Model)"]
+  style I1 fill:#e0f7d9,stroke:#333,stroke-width:1px
+  space
+  J1 ["Assert on Error Handling (Exceptions, Error Models)"]
+  style J1 fill:#e0f7d9,stroke:#333,stroke-width:1px
+  space
+  K1 ["(Optional) Verify Request Parameters (if mocking)"]
+  style K1 fill:#e0f7d9,stroke:#333,stroke-width:1px
+  space
+  L1 ["(Integration Tests) Run Against Test Environment"]
+  style L1 fill:#e0f7d9,stroke:#333,stroke-width:1px
+
+  E1 --> F1
+  F1 --> G1
+  G1 --> H1
+  H1 --> I1
+  I1 --> J1
+  J1 --> K1
+  K1 --> L1
+end
